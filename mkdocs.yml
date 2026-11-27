@@ -8,20 +8,23 @@ use_directory_urls: false
 
 theme:
   name: material
+  font:
+    text: Source Sans 3
+    code: Source Code Pro
   palette:
     # Light mode
     - media: "(prefers-color-scheme: light)"
       scheme: default
-      primary: teal
-      accent: green
+      primary: custom
+      accent: custom
       toggle:
         icon: material/brightness-7
         name: Switch to dark mode
     # Dark mode
     - media: "(prefers-color-scheme: dark)"
       scheme: slate
-      primary: teal
-      accent: green
+      primary: custom
+      accent: custom
       toggle:
         icon: material/brightness-4
         name: Switch to light mode
@@ -80,6 +83,7 @@ extra_css:
 
 nav:
   - Home: index.md
+  - Gallery: gallery.md
   - Getting Started:
     - Course Overview: getting-started/overview.md
     - Software Setup: getting-started/software-setup.md

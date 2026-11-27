@@ -1,5 +1,116 @@
 /* Custom styles for GIS Course */
 
+/* ---------- Cal Poly brand colors ----------
+   Poly Green #154734, Mustang Gold #BD8B13 (thin accents only),
+   Stadium Gold #F8E08E, Mission Beige #E4E3D3, Seal Gray #54585A */
+:root {
+  --cp-green: #154734;
+  --cp-green-dark: #0d2e21;
+  --cp-gold: #BD8B13;
+  --cp-stadium-gold: #F8E08E;
+  --cp-beige: #E4E3D3;
+  --cp-gray: #54585A;
+}
+
+[data-md-color-scheme="default"] {
+  --md-primary-fg-color: var(--cp-green);
+  --md-primary-fg-color--light: #3A6B57;
+  --md-primary-fg-color--dark: var(--cp-green-dark);
+  --md-accent-fg-color: #3A913F;
+  --md-typeset-a-color: var(--cp-green);
+}
+
+[data-md-color-scheme="slate"] {
+  --md-primary-fg-color: var(--cp-green);
+  --md-primary-fg-color--light: #3A6B57;
+  --md-primary-fg-color--dark: var(--cp-green-dark);
+  --md-accent-fg-color: var(--cp-stadium-gold);
+  --md-typeset-a-color: #B7CDC2;
+}
+
+/* Thin gold line under the header and tabs */
+.md-header { box-shadow: none; }
+.md-tabs { border-bottom: 3px solid var(--cp-gold); }
+@media screen and (max-width: 76.2344em) {
+  .md-header { border-bottom: 3px solid var(--cp-gold); }
+}
+
+/* Headings in Poly Green */
+[data-md-color-scheme="default"] .md-typeset h1,
+[data-md-color-scheme="default"] .md-typeset h2,
+[data-md-color-scheme="default"] .md-typeset h3 {
+  color: var(--cp-green);
+}
+.md-typeset h1 { font-weight: 800; }
+.md-typeset h2 { font-weight: 700; }
+
+/* Buttons: Stadium Gold with green text */
+.md-typeset .md-button {
+  border-radius: 8px;
+  color: var(--cp-green);
+  border-color: var(--cp-green);
+}
+.md-typeset .md-button--primary {
+  background-color: var(--cp-stadium-gold);
+  border-color: var(--cp-stadium-gold);
+  color: var(--cp-green);
+}
+.md-typeset .md-button:hover,
+.md-typeset .md-button--primary:hover {
+  background-color: var(--cp-green);
+  border-color: var(--cp-green);
+  color: #ffffff;
+}
+
+/* QGIS / ArcGIS Pro tabs: gold underline on the active tab */
+.md-typeset .tabbed-labels > label:hover { color: var(--cp-green); }
+[data-md-color-scheme="default"] .md-typeset .tabbed-set > input:checked + label,
+[data-md-color-scheme="default"] .md-typeset .tabbed-labels > label.tabbed-label--active { color: var(--cp-green); }
+.md-typeset .tabbed-labels::before { background: var(--cp-gold); }
+
+/* ---------- Student map gallery (gallery.md) ---------- */
+.cp-gallery {
+  margin: 1.2rem 0 2rem;
+}
+.cp-gallery h2 {
+  margin: 0 0 1.4rem;
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--cp-green);
+}
+.cp-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+  gap: 1.4rem 1.2rem;
+}
+.cp-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  color: inherit;
+  text-decoration: none;
+}
+.cp-card__thumb {
+  aspect-ratio: 4 / 3;
+  border-radius: 10px;
+  overflow: hidden;
+  background: var(--cp-beige);
+}
+.cp-card__thumb svg,
+.cp-card__thumb img { width: 100%; height: 100%; display: block; object-fit: cover; margin: 0; box-shadow: none; border-radius: 0; }
+.cp-card__caption { font-size: 0.85rem; color: var(--cp-gray); line-height: 1.35; }
+.cp-card__thumb--empty {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #3A6B57;
+  font-weight: 700;
+  font-size: 0.8rem;
+}
+.cp-card:hover .cp-card__caption { text-decoration: underline; text-decoration-color: var(--cp-gold); text-underline-offset: 4px; }
+[data-md-color-scheme="slate"] .cp-card__caption { color: #B7CDC2; }
+
+
 /* Improve card layout spacing */
 .md-typeset .grid.cards > * {
   margin-bottom: 1rem;
@@ -7,20 +118,20 @@
 
 /* Style for definition boxes */
 .admonition.definition {
-  border-left-color: #2196F3;
+  border-left-color: #5CB8B2;
 }
 
 .admonition.definition > .admonition-title {
-  background-color: rgba(33, 150, 243, 0.1);
+  background-color: rgba(92, 184, 178, 0.12);
 }
 
 /* Style for lab boxes */
 .admonition.lab {
-  border-left-color: #4CAF50;
+  border-left-color: #3A913F;
 }
 
 .admonition.lab > .admonition-title {
-  background-color: rgba(76, 175, 80, 0.1);
+  background-color: rgba(58, 145, 63, 0.1);
 }
 
 /* Map container styling */
@@ -44,4 +155,18 @@
   border-radius: 4px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
   margin: 1rem 0;
+}
+
+/* Gallery cards are <figure>s: undo Material's centered figure style */
+.md-typeset figure.cp-card {
+  margin: 0;
+  width: auto;
+  max-width: none;
+  align-items: stretch;
+}
+.md-typeset .cp-card figcaption {
+  margin: 0.5rem 0 0;
+  max-width: none;
+  text-align: left;
+  font-style: normal;
 }

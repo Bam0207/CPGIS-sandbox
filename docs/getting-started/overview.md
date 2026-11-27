@@ -145,7 +145,7 @@ This course is:
 
 **Questions or Feedback?**
 
-- Report issues on [GitHub](https://github.com/yourusername/gis-course/issues)
+- Report issues on [GitHub](https://github.com/kashingtonDC/CPGIS/issues)
 - Suggest improvements via pull requests
 - Share your experience with others
 

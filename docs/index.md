@@ -135,6 +135,6 @@ Ready to begin? Here's what to do:
 
 ---
 
-**Questions or feedback?** Open an issue on [GitHub](https://github.com/yourusername/gis-course) or contribute improvements!
+**Questions or feedback?** Open an issue on [GitHub](https://github.com/kashingtonDC/CPGIS) or contribute improvements!
 
 *This course is open-source and continuously evolving. Last updated: February 2026*

@@ -130,4 +130,4 @@ A curated collection of learning resources to supplement this course.
 
 ---
 
-*Have a resource to suggest? [Open an issue](https://github.com/yourusername/gis-course/issues) or submit a pull request!*
+*Have a resource to suggest? [Open an issue](https://github.com/kashingtonDC/CPGIS/issues) or submit a pull request!*
